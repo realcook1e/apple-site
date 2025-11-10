@@ -40,8 +40,7 @@ const Model: FC<ModelProps> = props => {
 	return (
 		<group
 			{...props}
-			dispose={null}
-		>
+			dispose={null}>
 			<mesh
 				castShadow
 				receiveShadow
@@ -216,8 +215,7 @@ const Model: FC<ModelProps> = props => {
 						: undefined
 				}
 				material={materials.pIJKfZsazmcpEiU}
-				scale={0.01}
-			>
+				scale={0.01}>
 				<meshStandardMaterial
 					roughness={1}
 					map={texture}

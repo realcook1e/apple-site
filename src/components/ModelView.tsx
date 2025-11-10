@@ -8,7 +8,6 @@ import {
 } from "react";
 import * as THREE from "three";
 import {
-	Html,
 	OrbitControls,
 	PerspectiveCamera,
 	View,
@@ -45,8 +44,7 @@ const ModelView: FC<ModelViewProps> = ({
 			index={index}
 			id={gsapType}
 			className={`w-full h-full absolute 
-				${index === 2 ? "right-[-100%]" : ""}`}
-		>
+				${index === 2 ? "right-[-100%]" : ""}`}>
 			<ambientLight intensity={0.3} />
 			<PerspectiveCamera
 				makeDefault
@@ -64,15 +62,16 @@ const ModelView: FC<ModelViewProps> = ({
 				target={new THREE.Vector3(0, 0, 0)}
 				onEnd={() =>
 					controlRef.current &&
-					setRotationState(controlRef.current.getAzimuthalAngle())
+					setRotationState(
+						controlRef.current.getAzimuthalAngle()
+					)
 				}
 			/>
 
 			<group
 				ref={groupRef}
 				name={`${index === 1 ? "small" : "large"}`}
-				position={[0, 0, 0]}
-			>
+				position={[0, 0, 0]}>
 				<Suspense fallback={<Loader />}>
 					<IPhone
 						scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
